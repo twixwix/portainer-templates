@@ -8661,6 +8661,83 @@
 	    "description": "CockroachDB cluster",
 	    "note": "Deploys an insecure CockroachDB cluster, please refer to <a href=\"https://www.cockroachlabs.com/docs/stable/orchestrate-cockroachdb-with-docker-swarm.html\" target=\"_blank\">CockroachDB documentation</a> for production deployments.",
 	    "stackfile": "https://raw.githubusercontent.com/portainer/templates/master/stacks/cockroachdb/edge/docker-stack.yml"
-	  }
+	  },
+		{
+			"category": [
+				"Management"
+			],
+			"description": "Smokeping keeps track of your network latency.",
+			"env": [
+				{
+					"label": "PUID",
+					"name": "PUID",
+					"set": "1000"
+				},
+				{
+					"label": "PGID",
+					"name": "PGID",
+					"set": "1000"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ",
+					"set": "America/Chicago"
+				}
+			],
+			"image": "linuxserver/smokeping:latest",
+			"logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/smokeping-icon.png",
+			"platform": "linux",
+			"ports": [
+				"80/tcp"
+			],
+			"title": "smokeping",
+			"type": 1,
+			"volumes": [
+				{
+					"container": "/config"
+				},
+				{
+					"container": "/data"
+				}
+			]
+		},
+		{
+			"category": [
+				"Video",
+				"Music",
+				"Other"
+			],
+			"description": "Htpcmanager, a front end for many htpc related applications. Hellowlol version.",
+			"env": [
+				{
+					"label": "PGID",
+					"name": "PGID",
+					"set": "1000"
+				},
+				{
+					"label": "PUID",
+					"name": "PUID",
+					"set": "1000"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ",
+					"set": "America/Chicago"
+				}
+			],
+			"image": "linuxserver/htpcmanager:latest",
+			"logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/htpcmanager-icon.png",
+			"platform": "linux",
+			"ports": [
+				"8085/tcp"
+			],
+			"title": "htpcmanager",
+			"type": 1,
+			"volumes": [
+				{
+					"container": "/config"
+				}
+			]
+		}
 	]
 }
